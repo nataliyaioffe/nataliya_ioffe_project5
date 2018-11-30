@@ -20,3 +20,20 @@
 label {
   margin-right: 10px;
 }
+
+
+#Gryffindor {
+  background: red;
+}
+
+#Hufflepuff {
+  background: yellow;
+}
+
+#Slytherin {
+  background: green;
+}
+
+#Ravenclaw {
+  background: blue;
+}

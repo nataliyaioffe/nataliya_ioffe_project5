@@ -7,12 +7,19 @@ class Dashboard extends Component {
         this.state = {};
     }
     render() {
-        // const { houseInformation } = this.props;
+        const { houseInformation } = this.props;
+        console.log(this.props.userHouseName);
         return (
-            <div>
-                <div className="main-content">
-                <h1>My House is {this.props.houseInformation.name}</h1>
-                <h2>My head of house is {this.props.houseInformation.headOfHouse}</h2>
+            <div id={this.props.userHouseName}>
+                <div>
+                    <div className="main-content">
+                    <p>User Name: {this.props.userName} </p>
+                    <h1>House: {houseInformation.name}</h1>
+                    <h2>Head of House: {houseInformation.headOfHouse}</h2>
+                    <h2>Values: {houseInformation.values}</h2>
+                    <h2>Values: {houseInformation.values}</h2>
+                    <h2>Colors: {houseInformation.colors}</h2>
+                    </div>
                 </div>
             </div>
         )

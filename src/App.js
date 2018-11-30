@@ -20,6 +20,7 @@ class App extends Component {
       userHouseName:"",
       fourHouses: [],
       currentPage: "form", // OR DASHBOARD PAGE
+      whichHouse: "",
       gryffindorHouse: [],
       hufflepuffHouse: [],
       ravenclawHouse: [],
@@ -78,6 +79,7 @@ class App extends Component {
       }
     }).then(async (res) => {
       const fourHouses = res.data;
+      console.log(fourHouses);
 
       this.shuffle(fourHouses)
       const userHouseName = fourHouses[0].name;
@@ -139,6 +141,8 @@ class App extends Component {
           (
             <Dashboard 
               houseInformation={foundHouse}
+              userName={this.state.userName}
+              userHouseName={this.state.userHouseName}
             />
           )
         }
