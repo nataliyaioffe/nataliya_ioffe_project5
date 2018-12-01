@@ -1,27 +1,38 @@
 import React, { Component } from "react";
+import List from "./List";
 
+const houses = ["gryffindor", "ravenclaw", "hufflepuff", "slytherin"];
 
 class Dashboard extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
     }
     render() {
         const { houseInformation } = this.props;
-        console.log(this.props.userHouseName);
         return (
-            <div id={this.props.userHouseName}>
-                <div>
+            <section id={this.props.userHouseName}>
+                <div className="wrapper">
                     <div className="main-content">
-                    <p>User Name: {this.props.userName} </p>
-                    <h1>House: {houseInformation.name}</h1>
-                    <h2>Head of House: {houseInformation.headOfHouse}</h2>
-                    <h2>Values: {houseInformation.values}</h2>
-                    <h2>Values: {houseInformation.values}</h2>
-                    <h2>Colors: {houseInformation.colors}</h2>
+                        <aside>
+                            <img src={require("./assets/" + this.props.userHouseName + ".svg")} alt=""/>
+                            <p>{this.props.userName} </p>
+                            <p>{houseInformation.name}</p>
+                            <p>{houseInformation.headOfHouse}</p>
+                            <p>Values: {houseInformation.values}</p>
+                            <p>Colors: {houseInformation.colors}</p>
+                        </aside>
+
+                            {houses.map(house => 
+                                <List house={house}
+                                    users={this.props.allUsers[house]} />
+                            )}
+                            
                     </div>
                 </div>
-            </div>
+                <div>
+                    
+                </div>
+            </section>
         )
     }
 }

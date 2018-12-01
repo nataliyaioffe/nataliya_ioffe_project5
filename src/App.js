@@ -21,43 +21,48 @@ class App extends Component {
       fourHouses: [],
       currentPage: "form", // OR DASHBOARD PAGE
       whichHouse: "",
-      gryffindorHouse: [],
-      hufflepuffHouse: [],
-      ravenclawHouse: [],
-      slytherinHouse: [],
+      allUsers: {},
+      // gryffindorHouse: [],
+      // hufflepuffHouse: [],
+      // ravenclawHouse: [],
+      // slytherinHouse: [],
       loading: false,
     }
   };
 
   componentDidMount() {
     // attach event listener to firebase
-    dbRefGryffindor.on("value", (snapshot) => {
+
+    dbRef.on("value", (snapshot) => {
+      // console.log(snapshot.val());
       this.setState({
-      gryffindorHouse: snapshot.val()
-    })
-  })
-    dbRefHufflepuff.on("value", (snapshot) => {
-      this.setState({
-        hufflepuffHouse: snapshot.val()
-      // hufflepuffHouse: Object.entries(snapshot.val())
-    })
-  })
-    dbRefRavenclaw.on("value", (snapshot) => {
-      this.setState({
-      ravenclawHouse: snapshot.val()
-    })
-  })
-    dbRefSlytherin.on("value", (snapshot) => {
-      this.setState({
-      slytherinHouse: snapshot.val()
+        allUsers: snapshot.val()
       })
-  })
+    })
+
+  //   dbRefGryffindor.on("value", (snapshot) => {
+  //     this.setState({
+  //     gryffindorHouse: snapshot.val()
+  //   }
+  // })
+  //   dbRefHufflepuff.on("value", (snapshot) => {
+  //     this.setState({
+  //       hufflepuffHouse: snapshot.val()
+  //     // hufflepuffHouse: Object.entries(snapshot.val())
+  //   })
+  // })
+  //   dbRefRavenclaw.on("value", (snapshot) => {
+  //     this.setState({
+  //     ravenclawHouse: snapshot.val()
+  //   })
+  // })
+  //   dbRefSlytherin.on("value", (snapshot) => {
+  //     this.setState({
+  //     slytherinHouse: snapshot.val()
+  //     })
+  // })
+
 }
-
-// convert snapshot object into array
-// update houselist to that array
-
-// {Object.entries(this.state.bookList).map((book) => {
 
   // ON USER TYPING IN INPUT FIELD
   handleChange = (event) => {
@@ -79,19 +84,22 @@ class App extends Component {
       }
     }).then(async (res) => {
       const fourHouses = res.data;
-      console.log(fourHouses);
 
       this.shuffle(fourHouses)
       const userHouseName = fourHouses[0].name;
 
       await this.setState({
-        fourHouses,
+        fourHouses: fourHouses,
         userHouseName: userHouseName,
       })
+
+      // let animation = this.state.rubberBand;
+      // animation = true;
 
       this.setState({
         currentPage: 'dashboard',
         loading: false,
+        rubberBand: true
       })
 
       const newSubmission = {
@@ -101,17 +109,14 @@ class App extends Component {
 
       if (this.state.userHouseName === "Gryffindor") {
         dbRefGryffindor.push(newSubmission)
-      }
-      if (this.state.userHouseName === "Slytherin") {
+      } else if (this.state.userHouseName === "Slytherin") {
         dbRefSlytherin.push(newSubmission)
-      }
-      if (this.state.userHouseName === "Ravenclaw") {
+      } else if (this.state.userHouseName === "Ravenclaw") {
         dbRefRavenclaw.push(newSubmission)
-      }
-      if (this.state.userHouseName === "Hufflepuff") {
+      } else {
         dbRefHufflepuff.push(newSubmission)
       }
-      
+
     })}
 
   shuffle = function(array) {
@@ -126,30 +131,21 @@ class App extends Component {
     const foundHouse = this.state.fourHouses.find((house) => house.name === this.state.userHouseName);
     return (
       <main>
-        {/* {this.state.loading && <h2> I'M LOADING HAHAHAHAHHAHAHHA</h2>}         */}
-        <div className="wrapper">
-        {this.state.currentPage === "form" ? 
-          (<div className="main-content">
-            <h1>Harry Potter Thingy</h1>
-             <Form 
+        {/* {this.state.loading && <h2> I'M LOADING </h2>} */}
+       {this.state.currentPage === "form" ?
+          (<Form 
                 handleSubmit={this.handleSubmit}
                 handleChange={this.handleChange}
                 userName={this.state.userName}
-             />
-            </div>)
+             />)
           :
-          (
-            <Dashboard 
+          (<Dashboard 
               houseInformation={foundHouse}
               userName={this.state.userName}
               userHouseName={this.state.userHouseName}
-            />
-          )
+              allUsers={this.state.allUsers}
+            />)
         }
-
-            {/* if there's a value in username/housename state, do this h1 */}
-            {/* {this.state.userName ? <h1>{this.state.userName}, {this.state.userHouseName}</h1> : false} */}
-          </div>
       </main>
     )
   };
