@@ -12,21 +12,20 @@ ul {list-style: none;}
 html {
   font-size: 62.7%;
 }
+
 section {
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
 }
 
 .wrapper {
   margin: 0 auto;
   width: 90%;
   max-width: 1280px;
-}
-.section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
 }
 
 .content-container {
@@ -47,9 +46,37 @@ aside {
 
 .house-list {
   width: 50%;
-  border: 1px solid orange;
-  height: 50vh;
+  border: 1px solid white;
+  height: 50%;
+  padding: 20 0;
 }
+
+.house-name {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px 0;
+}
+
+ul {
+  width: 100%;
+  height: 89%;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+li {
+  border-bottom: 1px solid rgba(255,255,255,0.5);
+  width: calc(50% - 10px);
+  margin: 5px 0;
+  font-size: 1.6rem;
+}
+
+
+
+
+
 
 /* FORM */
 #form-section {
@@ -186,17 +213,5 @@ Hex 	RGB
     color: white;
   }
 
-  ul {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    flex-wrap: wrap;
-    height: 100%;
-  }
-
-  li {
-    border-bottom: 1px solid rgba(255,255,255,0.5);
-    width: 50%;
-  }
-
+ 
  

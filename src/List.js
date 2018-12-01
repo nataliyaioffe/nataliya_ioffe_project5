@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-
+const say = x => (console.log(x), x);
 class List extends Component {
     constructor(props) {
         super(props);
@@ -8,15 +8,32 @@ class List extends Component {
     render() {
         return( 
             <div className="house-list">
+                <div className="house-name">
+                    <h2>{this.props.house}</h2>
+                </div>
                 <ul className={this.props.house}>
-                    {Object.keys(this.props.users).map(user => {
+
+                    {Object.entries(this.props.users).map(item => {
+                        // console.log(this.props.users);
+                        // console.log(item);
+                        return (
+                            <li key={item[0]}>{item[1].userName}</li> // << -- key of object
+                        )
+                    })}
+
+
+
+
+
+
+                    {/* {Object.keys(this.props.users).map(user => {
 
                         const userInfo = this.props.users[user]
 
                         return (
-                        <li key={user}>{userInfo.userName}</li> // << -- key of object
-                        )
-                    })}
+                          <li key={user}>{userInfo.userName}</li> // << -- key of object */}
+                        {/* ) */}
+                    {/* })} */}
                 </ul>
             </div>
         )

@@ -12,6 +12,13 @@ const dbRefSlytherin = firebase.database().ref("/slytherin");
 const dbRefHufflepuff = firebase.database().ref("/hufflepuff");
 const dbRefRavenclaw = firebase.database().ref("/ravenclaw");
 
+const defaultState = {
+  gryffindor: {},
+  slytherin: {},
+  hufflepuff: {},
+  ravenclaw: {},
+}
+
 class App extends Component {
   constructor() {
     super();
@@ -35,33 +42,11 @@ class App extends Component {
 
     dbRef.on("value", (snapshot) => {
       // console.log(snapshot.val());
+      
       this.setState({
-        allUsers: snapshot.val()
+        allUsers: { ...defaultState, ...snapshot.val() }
       })
     })
-
-  //   dbRefGryffindor.on("value", (snapshot) => {
-  //     this.setState({
-  //     gryffindorHouse: snapshot.val()
-  //   }
-  // })
-  //   dbRefHufflepuff.on("value", (snapshot) => {
-  //     this.setState({
-  //       hufflepuffHouse: snapshot.val()
-  //     // hufflepuffHouse: Object.entries(snapshot.val())
-  //   })
-  // })
-  //   dbRefRavenclaw.on("value", (snapshot) => {
-  //     this.setState({
-  //     ravenclawHouse: snapshot.val()
-  //   })
-  // })
-  //   dbRefSlytherin.on("value", (snapshot) => {
-  //     this.setState({
-  //     slytherinHouse: snapshot.val()
-  //     })
-  // })
-
 }
 
   // ON USER TYPING IN INPUT FIELD
@@ -74,6 +59,7 @@ class App extends Component {
   // ON SUBMIT
   handleSubmit = (event) => {
     event.preventDefault();
+    console.log("works");
     this.setState({ loading: true });
     axios({
       method: 'GET',

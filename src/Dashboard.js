@@ -22,8 +22,10 @@ class Dashboard extends Component {
                             <p>Colors: {houseInformation.colors}</p>
                         </aside>
                         <section className="main-content">
-                            {houses.map(house => 
-                                <List house={house}
+                            {houses.map((house, i) => 
+                                <List 
+                                    key={i}
+                                    house={house}
                                     users={this.props.allUsers[house]} />
                             )}
                         </section>                        
