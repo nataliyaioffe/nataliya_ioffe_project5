@@ -12,7 +12,7 @@ class Dashboard extends Component {
         return (
             <section id={this.props.userHouseName}>
                 <div className="wrapper">
-                    <div className="main-content">
+                    <div className="content-container">
                         <aside>
                             <img src={require("./assets/" + this.props.userHouseName + ".svg")} alt=""/>
                             <p>{this.props.userName} </p>
@@ -21,12 +21,12 @@ class Dashboard extends Component {
                             <p>Values: {houseInformation.values}</p>
                             <p>Colors: {houseInformation.colors}</p>
                         </aside>
-
+                        <section className="main-content">
                             {houses.map(house => 
                                 <List house={house}
                                     users={this.props.allUsers[house]} />
                             )}
-                            
+                        </section>                        
                     </div>
                 </div>
                 <div>
