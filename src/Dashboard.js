@@ -8,17 +8,15 @@ class Dashboard extends Component {
         super(props);
     }
     render() {
-        console.log(this.props.allUsers);
-        const { houseInformation } = this.props;
-        console.log("checking props", this.props);
+        // const { houseInformation } = this.props;
         return (
             <section id={this.props.userHouseName}>
                 <section className="user-house-dash">
                     <div className="wrapper">
-                        <p>{this.props.userName}, you're a {houseInformation.name}!</p>
-                        <p>{houseInformation.headOfHouse}</p>
-                        <p>Values: {houseInformation.values}</p>
-                        <p>Colors: {houseInformation.colors}</p>
+                        <p>{this.props.userName}, you're a {this.props.houseInformation.name}!</p>
+                        <p>{this.props.houseInformation.headOfHouse}</p>
+                        <p>Values: {this.props.houseInformation.values}</p>
+                        <p>Colors: {this.props.houseInformation.colors}</p>
                     </div>
                 </section>
                 <section className="master-house-lists">

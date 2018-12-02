@@ -3,7 +3,8 @@ import './App.css';
 import axios from 'axios';
 import firebase from './firebase';
 import Form from "./Form";
-import Dashboard from "./Dashboard";
+// import Dashboard from "./Dashboard";
+import SortResult from "./SortResult";
 
 const dbRef = firebase.database().ref();
 const dbRefGryffindor = firebase.database().ref("/gryffindor");
@@ -25,8 +26,7 @@ class App extends Component {
       userName: "",
       userHouseName:"",
       fourHouses: [],
-      currentPage: "form", // OR DASHBOARD PAGE
-      whichHouse: "",
+      currentPage: "form", // OR DASHBOARD // SORT RESULT
       allUsers: {},
       loading: false,
     }
@@ -70,25 +70,24 @@ class App extends Component {
         userHouseName: userHouseName,
       })
 
-       this.setState({
-        currentPage: 'dashboard',
-        loading: false,
-        rubberBand: true
+      this.setState({
+        currentPage: "sortResult",
+        loading: false
       })
 
-      const newSubmission = {
+      const newStudent = {
         userName: this.state.userName,
         userHouseName: this.state.userHouseName
       }
 
       if (this.state.userHouseName === "Gryffindor") {
-        dbRefGryffindor.push(newSubmission)
+        dbRefGryffindor.push(newStudent)
       } else if (this.state.userHouseName === "Slytherin") {
-        dbRefSlytherin.push(newSubmission)
+        dbRefSlytherin.push(newStudent)
       } else if (this.state.userHouseName === "Ravenclaw") {
-        dbRefRavenclaw.push(newSubmission)
+        dbRefRavenclaw.push(newStudent)
       } else {
-        dbRefHufflepuff.push(newSubmission)
+        dbRefHufflepuff.push(newStudent)
       }
 
     })}
@@ -113,12 +112,21 @@ class App extends Component {
                 userName={this.state.userName}
              />)
           :
-          (<Dashboard 
-              houseInformation={foundHouse}
-              userName={this.state.userName}
-              userHouseName={this.state.userHouseName}
-              allUsers={this.state.allUsers}
-            />)
+
+            (
+              <SortResult 
+                houseInformation={foundHouse}
+                userName={this.state.userName}
+                userHouseName={this.state.userHouseName}
+                allUsers={this.state.allUsers}/>
+            )
+
+          // (<Dashboard 
+          //     houseInformation={foundHouse}
+          //     userName={this.state.userName}
+          //     userHouseName={this.state.userHouseName}
+          //     allUsers={this.state.allUsers}
+          //   />)
         }
       </main>
     )
