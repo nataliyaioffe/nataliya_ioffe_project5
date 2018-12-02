@@ -8,7 +8,9 @@ class Dashboard extends Component {
         super(props);
     }
     render() {
+        console.log(this.props.allUsers);
         const { houseInformation } = this.props;
+        console.log("checking props", this.props);
         return (
             <section id={this.props.userHouseName}>
                 <div className="wrapper">

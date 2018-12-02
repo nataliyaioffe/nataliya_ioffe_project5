@@ -5,7 +5,6 @@ import firebase from './firebase';
 import Form from "./Form";
 import Dashboard from "./Dashboard";
 
-// reference to the root of the database
 const dbRef = firebase.database().ref();
 const dbRefGryffindor = firebase.database().ref("/gryffindor");
 const dbRefSlytherin = firebase.database().ref("/slytherin");
@@ -29,20 +28,12 @@ class App extends Component {
       currentPage: "form", // OR DASHBOARD PAGE
       whichHouse: "",
       allUsers: {},
-      // gryffindorHouse: [],
-      // hufflepuffHouse: [],
-      // ravenclawHouse: [],
-      // slytherinHouse: [],
       loading: false,
     }
   };
 
   componentDidMount() {
-    // attach event listener to firebase
-
     dbRef.on("value", (snapshot) => {
-      // console.log(snapshot.val());
-      
       this.setState({
         allUsers: { ...defaultState, ...snapshot.val() }
       })
@@ -79,10 +70,7 @@ class App extends Component {
         userHouseName: userHouseName,
       })
 
-      // let animation = this.state.rubberBand;
-      // animation = true;
-
-      this.setState({
+       this.setState({
         currentPage: 'dashboard',
         loading: false,
         rubberBand: true
