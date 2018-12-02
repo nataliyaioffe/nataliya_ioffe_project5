@@ -13,30 +13,23 @@ class Dashboard extends Component {
         console.log("checking props", this.props);
         return (
             <section id={this.props.userHouseName}>
-                <div className="wrapper">
-                    <div className="content-container">
-                        <aside>
-                            <img src={require("./assets/" + this.props.userHouseName + ".svg")} alt=""/>
-                            <p>{this.props.userName} </p>
-                            <p>{houseInformation.name}</p>
-                            <p>{houseInformation.headOfHouse}</p>
-                            <p>Values: {houseInformation.values}</p>
-                            <p>Colors: {houseInformation.colors}</p>
-                        </aside>
-                        <section className="main-content">
-                            {houses.map((house, i) => 
-                                <List 
-                                    key={i}
-                                    house={house}
-                                    users={this.props.allUsers[house]} />
-                            )}
-                        </section>                        
+                <section className="user-house-dash">
+                    <div className="wrapper">
+                        <p>{this.props.userName}, you're a {houseInformation.name}!</p>
+                        <p>{houseInformation.headOfHouse}</p>
+                        <p>Values: {houseInformation.values}</p>
+                        <p>Colors: {houseInformation.colors}</p>
                     </div>
-                </div>
-                <div>
-                    
-                </div>
-            </section>
+                </section>
+                <section className="master-house-lists">
+                    {houses.map((house, i) => 
+                        <List 
+                            key={i}
+                            house={house}
+                            users={this.props.allUsers[house]} />
+                    )}
+                </section>                        
+            </section>                    
         )
     }
 }

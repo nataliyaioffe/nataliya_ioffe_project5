@@ -17,7 +17,6 @@ class List extends Component {
                           <li key={user}>{userInfo.userName}</li>
                         )
                     })}
-                    
                 </ul>
             </div>
         )
