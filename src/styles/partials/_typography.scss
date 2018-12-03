@@ -3,13 +3,14 @@ html {
 }
 
 body {
-  font-family: 'Mada', sans-serif;
+  font-family: 'Gothic A1', sans-serif;
   font-size: 2rem;
 }
 
-h1, h2 {
+h1, h2, h3 {
   color: white;
   font-family: 'Cutive Mono', monospace;
+  font-family: 'Playfair Display', serif;
 }
 
 h1 {
@@ -20,3 +21,6 @@ h2 {
   font-size: 3rem;
 }
 
+h3 {
+  margin-bottom: 10px;
+}

@@ -8,10 +8,10 @@ class Form extends Component {
                     <div className="form-container">
                     <h1>The Sorting Hat</h1>
                         <div className="icons-container">
-                            <img src={require("./assets/Gryffindor.svg")} alt="" />
-                            <img src={require("./assets/Ravenclaw.svg")} alt="" />
-                            <img src={require("./assets/Hufflepuff.svg")} alt="" />
-                            <img src={require("./assets/Slytherin.svg")} alt="" />
+                            <img src={require("../assets/Gryffindor.svg")} alt="" />
+                            <img src={require("../assets/Ravenclaw.svg")} alt="" />
+                            <img src={require("../assets/Hufflepuff.svg")} alt="" />
+                            <img src={require("../assets/Slytherin.svg")} alt="" />
                         </div>
                         <form onSubmit={this.props.handleSubmit} action="" action="">
                             <div className="input-container">

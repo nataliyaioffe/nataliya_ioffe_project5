@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import List from "./List";
 import { type } from "os";
+import date from "./date";
+
 
 // const houses = ["gryffindor", "ravenclaw", "hufflepuff", "slytherin"];
 
@@ -18,15 +20,24 @@ class Dashboard extends Component {
             <section className="dashboard">
                 <div className="wrapper">
                     <div className="main-dash">
+                        {/* <div className="house-header">
+                            <h1>{this.props.houseInformation.name.toUpperCase()}</h1>
+                            <p>{this.props.houseInformation.values}</p>
+                        </div> */}
                         <div className="user-info">
-                            <h1>{this.props.houseInformation.name}</h1>
-                            <p className="user-name">{this.props.userName}</p>
-                            {Date()}
+                            <p className="user-name">Welcome, {this.props.userName}</p>
+                            {date}
                         </div>
+                        <div className="spell-of-day">
+                            <h3>Spell of the Day</h3>
+                            <p>{this.props.spellName}</p>
+                            <p>{this.props.spellType}</p>
+                            <p>{this.props.spellEffect}</p>
+                        </div> 
 
-                        <div className="dash-details">
+                        {/* <div className="dash-details">
                             <div className="house-details">
-                                <h3>About {this.props.houseInformation.name}</h3>
+                                <h3>About Your House</h3>
                                 <div className="detail-item">
                                     <span className="detail-head">Head of House:</span>
                                     <p>{this.props.houseInformation.headOfHouse}</p>
@@ -39,10 +50,7 @@ class Dashboard extends Component {
                                     <span className="detail-head">Head Ghost: </span>
                                     <p>{this.props.houseInformation.houseGhost}</p>
                                 </div>
-                                <div className="detail-item">
-                                    <span className="detail-head">House Values: </span>
-                                    <p>{this.props.houseInformation.values}</p>
-                                </div>
+                                
                                 <div className="detail-item">
                                     <span className="detail-head">Colors: </span>
                                     <p>{this.props.houseInformation.colors}</p>
@@ -56,22 +64,20 @@ class Dashboard extends Component {
                                 <p>{this.props.spellEffect}</p>
                             </div>                          
 
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 
-                <div className="master-house-lists">
+                <List
+                    houseName={this.props.houseInformation.name}
+                    users={this.props.allUsers[lowerCaseHouseName]} /> 
+
+                {/* {houses.map((house, i) =>
                     <List
-                        houseName={this.props.houseInformation.name}
-                        users={this.props.allUsers[lowerCaseHouseName]} /> 
-    
-                    {/* {houses.map((house, i) =>
-                        <List
-                            key={i}
-                            house={house}
-                            users={this.props.allUsers[house]} />
-                    )} */}
-                 </div>   
+                        key={i}
+                        house={house}
+                        users={this.props.allUsers[house]} />
+                )} */}
             </section>                     
         )
     }

@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import './styles/App.css';
 import axios from 'axios';
 import firebase from './firebase';
-import Form from "./Form";
+import Form from "./components/Form";
 // import Dashboard from "./Dashboard";
-import SortResult from "./SortResult";
+import SortResult from "./components/SortResult";
 
 const dbRef = firebase.database().ref();
 const dbRefGryffindor = firebase.database().ref("/gryffindor");
