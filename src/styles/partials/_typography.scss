@@ -4,13 +4,16 @@ html {
 
 body {
   font-family: 'Gothic A1', sans-serif;
-  font-size: 2rem;
+  font-family: 'Lato', sans-serif;
+  font-family: 'IM Fell English', serif;
+  font-size: 2.5rem;
+  color: ghostwhite;
+
 }
 
 h1, h2, h3 {
-  color: white;
-  font-family: 'Cutive Mono', monospace;
-  font-family: 'Playfair Display', serif;
+  font-family: 'IM Fell English', serif;
+ 
 }
 
 h1 {
@@ -18,11 +21,70 @@ h1 {
 }
 
 h2 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   margin-bottom: 25px;
 }
 
 h3 {
   font-size: 3rem;
   margin-bottom: 10px;
+  font-style: italic;
+}
+
+input[type="text"] {
+  font-size: 2.2rem;
+    &::placeholder {
+      text-align: center;
+      font-style: italic;
+    }
+}
+
+.sort-result {
+  p {
+    font-family: 'IM Fell English', serif;
+    font-size: 4rem;
+  }
+  .result-house {
+      font-family: 'IM Fell English', serif;
+      font-size: 9rem;
+      text-transform: capitalize;
+  }
+  .Hufflepuff {
+    color: #ecb939;
+  }
+  .Ravenclaw {
+    color: #222f5b ;
+  }
+  .Gryffindor {
+    color: #740001;
+  }
+  .Slytherin {
+    color: 	#2a623d ;
+  }
+
+}
+
+
+.user-name, 
+.detail-head {
+  font-family: 'IM Fell English', serif;
+  font-weight: bold;
+}
+
+.user-name {
+  font-size: 5rem;
+  font-style: italic;
+}
+
+.spell {
+  font-weight: bold;
+}
+.spell-effect {
+  font-style: italic;
+}
+
+.detail-head {
+  font-style: italic;
+  font-size: 2.5rem;
+
 }

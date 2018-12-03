@@ -59,7 +59,7 @@ class SortResult extends Component {
                 <div className="sort-result">
                     <p class={this.state.anim1 === true ? "anim1" : "hide"}>Hmm...</p>
                     <p className={this.state.anim2 === true ? "anim2" : "hide"}>How about...</p> 
-                    <p className={this.state.anim3 === true ? "anim3" : "hide"}><span className="house">{this.props.userHouseName.toUpperCase()}!!!</span></p>
+                    <p className={this.state.anim3 === true ? "anim3" : "hide"}><span className={"result-house" + " " + this.props.userHouseName}>{this.props.userHouseName}!</span></p>
                     <button className={this.state.anim4 === true ? "anim4" : "hide"} onClick={this.handleClick}>View Dashboard</button>
                 </div>
                 )
@@ -69,7 +69,7 @@ class SortResult extends Component {
                         houseInformation={this.props.houseInformation}
                         userName={this.props.userName}
                         userHouseName={this.props.userHouseName}
-                        allUsers={this.props.allUsers}                          
+                        allUsers={this.props.allUsers}          
                         spellName={this.props.spellName}
                         spellType={this.props.spellType}
                         spellEffect={this.props.spellEffect} />

@@ -7,51 +7,29 @@
     padding-top: 20vh;
     height: 100vh;
     text-align: center;
-    p {
-        // font-family: 'Cutive Mono', monospace;
-        font-family: 'Playfair Display', serif;
-        font-size: 3rem;
-    }
-    .house, 
-    .name {
+    .result-house {
         display: block;
     }
-    .house {
-        font-size: 8rem;
+    .result-house {
         margin-top: 10px;
-        // font-style: italic;
     }
-    .name {
-        font-size: 5rem;
-        margin-bottom: 20px;
+    .hide {
+        visibility: hidden;
+    }
+    .anim1 {
+        animation: zoomIn 1s; 
+    }
+    .anim2 {
+        animation: zoomIn 1s; 
+    }
+    .anim3 {
+        animation: jackInTheBox 1.25s; 
+    }
+    .anim4 {
+        animation: slideInUp 1s; 
     }
 }
 
-.hide {
-    visibility: hidden;
-}
-
-.anim1 {
-    animation: zoomIn 1s; 
-}
-
-.anim2 {
-    animation: zoomIn 1s; 
-
-}
-
-.anim3 {
-    animation: jackInTheBox 1.25s; 
-
-}
-
-.anim4 {
-    animation: slideInUp 1s; 
-}
-
-.zoomIn {
-  animation-name: zoomIn;
-}
 
 @keyframes zoomIn {
   from {
@@ -70,20 +48,6 @@
   }
 }
 
-.slideInUp {
-  animation-name: slideInUp;
-}
-
-
-.jackInTheBox {
-  animation-name: jackInTheBox;
-}
-
-.rotateIn {
-  animation-name: rotateIn;
-}
-
-
 
 // ANIMATIONS via animate.css
 
@@ -94,19 +58,6 @@
   }
   to {
     transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes rotateIn {
-  from {
-    transform-origin: center;
-    transform: rotate3d(0, 0, 1, -200deg);
-    opacity: 0;
-  }
-  to {
-    transform-origin: center;
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
   }
 }
 

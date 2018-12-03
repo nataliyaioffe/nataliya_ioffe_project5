@@ -20,13 +20,13 @@ class Dashboard extends Component {
                             <p>Today's date is {date}</p>
                         </div>
                         <div className="spells">
-                            <h3>Spell of the Moment</h3>
+                            <h2>Featured Spell</h2>
                             <p className="spell">{this.props.spellName}</p>
                             <p className="spell-effect">{this.props.spellEffect}</p>
                         </div> 
                     </div>
                     <div className="house-details">
-                        <img src={require("../assets/" + this.props.houseInformation.name + ".svg")} alt=""/>
+                        {/* <img src={require("../assets/" + this.props.houseInformation.name + ".svg")} alt=""/> */}
                         <h2>About Your House</h2>
                         <div className="details-container">
                             <div className="detail-item">

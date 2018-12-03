@@ -165,23 +165,71 @@ html {
 
 body {
   font-family: 'Gothic A1', sans-serif;
-  font-size: 2rem; }
+  font-family: 'Lato', sans-serif;
+  font-family: 'IM Fell English', serif;
+  font-size: 2.5rem;
+  color: ghostwhite; }
 
 h1, h2, h3 {
-  color: white;
-  font-family: 'Cutive Mono', monospace;
-  font-family: 'Playfair Display', serif; }
+  font-family: 'IM Fell English', serif; }
 
 h1 {
   font-size: 6.5rem; }
 
 h2 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   margin-bottom: 25px; }
 
 h3 {
   font-size: 3rem;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  font-style: italic; }
+
+input[type="text"] {
+  font-size: 2.2rem; }
+  input[type="text"]::placeholder {
+    text-align: center;
+    font-style: italic; }
+
+.sort-result p {
+  font-family: 'IM Fell English', serif;
+  font-size: 4rem; }
+
+.sort-result .result-house {
+  font-family: 'IM Fell English', serif;
+  font-size: 9rem;
+  text-transform: capitalize; }
+
+.sort-result .Hufflepuff {
+  color: #ecb939; }
+
+.sort-result .Ravenclaw {
+  color: #222f5b; }
+
+.sort-result .Gryffindor {
+  color: #740001; }
+
+.sort-result .Slytherin {
+  color: #2a623d; }
+
+.user-name,
+.detail-head {
+  font-family: 'IM Fell English', serif;
+  font-weight: bold; }
+
+.user-name {
+  font-size: 5rem;
+  font-style: italic; }
+
+.spell {
+  font-weight: bold; }
+
+.spell-effect {
+  font-style: italic; }
+
+.detail-head {
+  font-style: italic;
+  font-size: 2.5rem; }
 
 /* FORM */
 img {
@@ -215,12 +263,9 @@ img {
     border: transparent;
     border-bottom: 1px solid white;
     color: white;
-    text-align: center;
-    font-size: 2rem; }
+    text-align: center; }
     #form-section input[type="text"]::placeholder {
-      color: white;
-      text-align: center;
-      font-style: italic; }
+      color: white; }
   #form-section .icons-container {
     margin: 50px 0;
     display: flex;
@@ -230,7 +275,7 @@ input[type="submit"],
 .sort-result button {
   margin-top: 20px;
   padding: 10px;
-  width: 175px;
+  width: 200px;
   height: 50px;
   background: transparent;
   color: white;
@@ -249,36 +294,20 @@ input[type="submit"],
   padding-top: 20vh;
   height: 100vh;
   text-align: center; }
-  .sort-result p {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem; }
-  .sort-result .house,
-  .sort-result .name {
+  .sort-result .result-house {
     display: block; }
-  .sort-result .house {
-    font-size: 8rem;
+  .sort-result .result-house {
     margin-top: 10px; }
-  .sort-result .name {
-    font-size: 5rem;
-    margin-bottom: 20px; }
-
-.hide {
-  visibility: hidden; }
-
-.anim1 {
-  animation: zoomIn 1s; }
-
-.anim2 {
-  animation: zoomIn 1s; }
-
-.anim3 {
-  animation: jackInTheBox 1.25s; }
-
-.anim4 {
-  animation: slideInUp 1s; }
-
-.zoomIn {
-  animation-name: zoomIn; }
+  .sort-result .hide {
+    visibility: hidden; }
+  .sort-result .anim1 {
+    animation: zoomIn 1s; }
+  .sort-result .anim2 {
+    animation: zoomIn 1s; }
+  .sort-result .anim3 {
+    animation: jackInTheBox 1.25s; }
+  .sort-result .anim4 {
+    animation: slideInUp 1s; }
 
 @keyframes zoomIn {
   from {
@@ -291,31 +320,12 @@ input[type="submit"],
     opacity: 1;
     color: white; } }
 
-.slideInUp {
-  animation-name: slideInUp; }
-
-.jackInTheBox {
-  animation-name: jackInTheBox; }
-
-.rotateIn {
-  animation-name: rotateIn; }
-
 @keyframes slideInUp {
   from {
     transform: translate3d(0, 100%, 0);
     visibility: visible; }
   to {
     transform: translate3d(0, 0, 0); } }
-
-@keyframes rotateIn {
-  from {
-    transform-origin: center;
-    transform: rotate3d(0, 0, 1, -200deg);
-    opacity: 0; }
-  to {
-    transform-origin: center;
-    transform: translate3d(0, 0, 0);
-    opacity: 1; } }
 
 @keyframes jackInTheBox {
   from {
@@ -330,30 +340,17 @@ input[type="submit"],
     opacity: 1;
     transform: scale(1); } }
 
-/* #Gryffindor .user-house-dash {
-  background: radial-gradient(#740001, #330001);
-}
-#Slytherin .user-house-dash {
-  background: radial-gradient(#1a472a, #0a1d11);
-}
-#Ravenclaw .user-house-dash {
-  background: radial-gradient(#0e1a40, #070c1f);
-}
-#Hufflepuff .user-house-dash {
-  background: radial-gradient(#ecb939, #805c04);
-} */
 #Gryffindor {
-  background: radial-gradient(#740001, #330001); }
+  background: radial-gradient(rgba(116, 0, 1, 0.9), rgba(116, 0, 1, 0.9)), url(../assets/Gryffindor.svg); }
 
 #Ravenclaw {
-  background: radial-gradient(#0e1a40, #070c1f); }
+  background: radial-gradient(rgba(14, 26, 64, 0.9), rgba(14, 26, 64, 0.9)), url(../assets/Ravenclaw.svg); }
 
 #Hufflepuff {
-  background: radial-gradient(#dba826, #5a4204); }
+  background: radial-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../assets/Hufflepuff.svg); }
 
 #Slytherin {
-  background: radial-gradient(#1a472a, #0a1d11);
-  background: #0a1d11; }
+  background: radial-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../assets/Slytherin.svg); }
 
 #Gryffindor,
 #Hufflepuff,
@@ -361,7 +358,6 @@ input[type="submit"],
 #Slytherin {
   display: flex;
   flex-direction: column;
-  color: white;
   min-height: 100vh; }
 
 .wrapper {
@@ -381,9 +377,6 @@ input[type="submit"],
   .main-dash .user-info {
     text-align: center; }
   .main-dash .user-name {
-    font-size: 5rem;
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
     margin-bottom: 20px; }
   .main-dash .dash-details {
     display: flex;
@@ -396,7 +389,6 @@ input[type="submit"],
     width: 310px;
     border-radius: 50%; }
     .main-dash .spells .spell {
-      font-weight: bold;
       margin-bottom: 10px; }
     .main-dash .spells .spell-effect {
       text-transform: capitalize; }
@@ -418,8 +410,6 @@ input[type="submit"],
     margin: 0 30px;
     padding: 10px 20px; }
   .details-container .detail-head {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
     margin-bottom: 10px; }
 
 li::before,
