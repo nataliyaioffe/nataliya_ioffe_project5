@@ -11,49 +11,41 @@ class SortResult extends Component {
     }
 
     handleClick = (event) => {
-        console.log("THIS WORKS");
         this.setState({
             currentPage: "dashboard",
-            loading: false,
         })
     }
 
     render() {
+        
         return (
-            <div>
-                {this.state.currentPage === "sortResult" ?
-                (
-                    <div>
-                        <p>{this.props.userName}, you've been sorted into {this.props.userHouseName}!</p>
-                        <button onClick={this.handleClick}>House Dashboard ></button>
+            <section id={this.props.userHouseName}>
+                <div class="wrapper"> 
+                    {this.state.currentPage === "sortResult" ?
+                    (
+                    <div className="sort-result">
+                        <p>
+                            <span class="name">{this.props.userName}...</span> 
+                            You've been sorted into 
+                            <span class="house">{this.props.userHouseName}</span>
+                        </p>
+                        <button onClick={this.handleClick}>View Dashboard</button>
                     </div>
-                )
-                :
-                (
-                    <Dashboard 
-                        houseInformation={this.props.houseInformation}
-                        userName={this.props.userName}
-                        userHouseName={this.props.userHouseName}
-                        allUsers={this.props.allUsers} />
-                )
-                }
-            </div>
+                    )
+                    :
+                    (
+                        <Dashboard 
+                            houseInformation={this.props.houseInformation}
+                            userName={this.props.userName}
+                            userHouseName={this.props.userHouseName}
+                            allUsers={this.props.allUsers} />
+                    )
+                    }
+                    </div>
+            </section>
         )
     }
 }
 
 
 export default SortResult
-
-
-
-// {
-//     this.state.currentPage === "form" ?
-//     (<Form
-//         handleSubmit={this.handleSubmit}
-//         handleChange={this.handleChange}
-//         userName={this.state.userName}
-//     />)
-//     :
-
-//     (

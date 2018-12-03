@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import List from "./List";
+import { type } from "os";
 
-const houses = ["gryffindor", "ravenclaw", "hufflepuff", "slytherin"];
+// const houses = ["gryffindor", "ravenclaw", "hufflepuff", "slytherin"];
 
 class Dashboard extends Component {
     constructor(props) {
@@ -9,25 +10,36 @@ class Dashboard extends Component {
     }
     render() {
         // const { houseInformation } = this.props;
+        console.log(this.props.allUsers);
+        const lowerCaseHouseName = this.props.houseInformation.name.toLowerCase();
+        // console.log(this.props.allUsers[lowerCaseName]);
         return (
-            <section id={this.props.userHouseName}>
-                <section className="user-house-dash">
+            <div className="dashboard">
+                <div className="user-house-dash">
                     <div className="wrapper">
-                        <p>{this.props.userName}, you're a {this.props.houseInformation.name}!</p>
-                        <p>{this.props.houseInformation.headOfHouse}</p>
-                        <p>Values: {this.props.houseInformation.values}</p>
-                        <p>Colors: {this.props.houseInformation.colors}</p>
+                        <div className="">
+                            <h1>{this.props.houseInformation.name}</h1>
+                            <p>{this.props.userName}</p>
+                            <p>{this.props.houseInformation.headOfHouse}</p>
+                            <p>Values: {this.props.houseInformation.values}</p>
+                            <p>Colors: {this.props.houseInformation.colors}</p>
+                        </div>
                     </div>
-                </section>
-                <section className="master-house-lists">
-                    {houses.map((house, i) => 
-                        <List 
+                </div>
+
+                <div className="master-house-lists">
+                    <List
+                        houseName={this.props.houseInformation.name}
+                        users={this.props.allUsers[lowerCaseHouseName]} /> 
+    
+                    {/* {houses.map((house, i) =>
+                        <List
                             key={i}
                             house={house}
                             users={this.props.allUsers[house]} />
-                    )}
-                </section>                        
-            </section>                    
+                    )} */}
+                 </div>   
+            </div>                     
         )
     }
 }

@@ -8,13 +8,13 @@ class List extends Component {
         return( 
             <div className="house-list">
                 <div className="house-name">
-                    <h2>{this.props.house}</h2>
+                    <h2>{this.props.houseName}</h2>
                 </div>
-                <ul className={this.props.house}>
-                    {Object.keys(this.props.users).map(user => {
-                        const userInfo = this.props.users[user]
+                <ul className={this.props.houseName}>
+                    {Object.keys(this.props.users).map(key => {
+                        const userInfo = this.props.users[key]
                         return (
-                          <li key={user}>{userInfo.userName}</li>
+                          <li key={key}>{userInfo.userName}</li>
                         )
                     })}
                 </ul>

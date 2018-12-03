@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Form extends Component {
     render() {
         return (
-            <section id="form-section">
+            <div id="form-section">
                 <div className="wrapper">
                     <div className="form-container">
                     <h1>The Sorting Hat</h1>
@@ -28,7 +28,7 @@ class Form extends Component {
                         </form>
                     </div>
                 </div>
-            </section>
+            </div>
         )
     }
 }

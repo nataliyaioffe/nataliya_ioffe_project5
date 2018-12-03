@@ -1,0 +1,157 @@
+@import "./partials/setup";
+@import "./partials/typography";
+@import "./partials/form";
+@import "./partials/sortResult";
+
+section {
+  display: flex;
+  text-align: center;
+}
+
+/* #Gryffindor .user-house-dash {
+  background: radial-gradient(#740001, #330001);
+}
+#Slytherin .user-house-dash {
+  background: radial-gradient(#1a472a, #0a1d11);
+}
+#Ravenclaw .user-house-dash {
+  background: radial-gradient(#0e1a40, #070c1f);
+}
+#Hufflepuff .user-house-dash {
+  background: radial-gradient(#ecb939, #805c04);
+} */
+
+#Gryffindor {
+  background: radial-gradient(#740001, #330001);
+}
+
+#Ravenclaw {
+  background: radial-gradient(#0e1a40, #070c1f);
+}
+
+#Hufflepuff {
+  background: radial-gradient(#ecb939, #805c04);
+}
+
+#Slytherin {
+  background: radial-gradient(#1a472a, #0a1d11);
+}
+
+#Gryffindor,
+#Hufflepuff,
+#Ravenclaw,
+#Slytherin {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  min-height: 100vh;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1280px;
+}
+
+ /* 
+Gryffindor
+#740001 	(116,0,1)
+#ae0001 	(174,0,1)
+#eeba30 	(238,186,48)
+#d3a625 	(211,166,37)
+#000000 	(0,0,0) 
+
+Hufflepuff
+#ecb939 	(236,185,57)
+#f0c75e 	(240,199,94)
+#726255 	(114,98,85)
+#372e29 	(55,46,41)
+#000000 	(0,0,0)
+
+Slytherin
+#1a472a 	(26,71,42)
+#2a623d 	(42,98,61)
+#5d5d5d 	(93,93,93)
+#aaaaaa 	(170,170,170)
+#000000 	(0,0,0)
+
+Ravenclaw
+#0e1a40 	(14,26,64)
+#222f5b 	(34,47,91)
+#5d5d5d 	(93,93,93)
+#946b2d 	(148,107,45)
+#000000 	(0,0,0) 
+*/
+
+.user-house-dash {
+  height: 60vh;
+  position: relative;
+  z-index: 100;
+  border-bottom: 3px solid black;
+}
+
+.master-house-lists {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  height: 40%;
+}
+
+.user-house-dash::before {
+  position: absolute; 
+  width: 200px;
+  height: 200px;
+  bottom: -100px;
+  left: 43.5%;
+}
+
+#Gryffindor .user-house-dash::before {
+  content: url(../assets/Gryffindor-white.svg);
+}
+#Slytherin .user-house-dash::before {
+  content: url(../assets/Slytherin-white.svg);
+}
+#Hufflepuff .user-house-dash::before {
+  content: url(../assets/Hufflepuff-white.svg);
+}
+#Ravenclaw .user-house-dash::before {
+  content: url(../assets/Ravenclaw-white.svg);
+}
+
+
+.house-list {
+  width: 25%;
+  padding: 20px;
+  text-align: center;
+}
+
+
+.house-name {
+  text-align: center;
+  padding: 40px 0;
+  text-transform: capitalize;
+}
+
+ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 1px solid black;
+}
+
+li {
+  margin: 5px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  width: 50%;
+  padding: 5px 0;
+}
+
+img {
+  color: white;
+  height: 100px;
+  width: 100px;
+}
+ 

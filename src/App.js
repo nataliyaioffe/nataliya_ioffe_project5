@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './styles/App.css';
 import axios from 'axios';
 import firebase from './firebase';
 import Form from "./Form";
@@ -50,7 +50,6 @@ class App extends Component {
   // ON SUBMIT
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log("works");
     this.setState({ loading: true });
     axios({
       method: 'GET',
@@ -89,8 +88,8 @@ class App extends Component {
       } else {
         dbRefHufflepuff.push(newStudent)
       }
-
-    })}
+    })
+  }
 
   shuffle = function(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -101,7 +100,7 @@ class App extends Component {
 
   render() {
     //can also do this step in state. 
-    const foundHouse = this.state.fourHouses.find((house) => house.name === this.state.userHouseName);
+    const houseInformation = this.state.fourHouses.find((house) => house.name === this.state.userHouseName);
     return (
       <main>
         {/* {this.state.loading && <h2> I'M LOADING </h2>} */}
@@ -112,10 +111,9 @@ class App extends Component {
                 userName={this.state.userName}
              />)
           :
-
             (
               <SortResult 
-                houseInformation={foundHouse}
+                houseInformation={houseInformation}
                 userName={this.state.userName}
                 userHouseName={this.state.userHouseName}
                 allUsers={this.state.allUsers}/>
