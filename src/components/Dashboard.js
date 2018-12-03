@@ -12,7 +12,7 @@ class Dashboard extends Component {
         console.log(this.props.allUsers);
         const lowerCaseHouseName = this.props.houseInformation.name.toLowerCase();
         return (
-            <section className="dashboard">
+            <section id={this.props.userHouseName}>
                 <div className="wrapper">
                     <div className="main-dash">
                         <div className="user-info">
@@ -20,7 +20,7 @@ class Dashboard extends Component {
                             <p>Today's date is {date}</p>
                         </div>
                         <div className="spells">
-                            <h3>Spell of the Day</h3>
+                            <h3>Spell of the Moment</h3>
                             <p className="spell">{this.props.spellName}</p>
                             <p className="spell-effect">{this.props.spellEffect}</p>
                         </div> 

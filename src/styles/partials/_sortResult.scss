@@ -1,3 +1,8 @@
+#sort-page {
+    background: black;
+    color: white;
+}
+
 .sort-result {
     padding-top: 20vh;
     height: 100vh;
@@ -12,7 +17,7 @@
         display: block;
     }
     .house {
-        font-size: 7rem;
+        font-size: 8rem;
         margin-top: 10px;
         // font-style: italic;
     }
@@ -21,3 +26,105 @@
         margin-bottom: 20px;
     }
 }
+
+.hide {
+    visibility: hidden;
+}
+
+.anim1 {
+    animation: zoomIn 1s; 
+}
+
+.anim2 {
+    animation: zoomIn 1s; 
+
+}
+
+.anim3 {
+    animation: jackInTheBox 1.25s; 
+
+}
+
+.anim4 {
+    animation: slideInUp 1s; 
+}
+
+.zoomIn {
+  animation-name: zoomIn;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+    color: transparent;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    color: white;
+  }
+}
+
+.slideInUp {
+  animation-name: slideInUp;
+}
+
+
+.jackInTheBox {
+  animation-name: jackInTheBox;
+}
+
+.rotateIn {
+  animation-name: rotateIn;
+}
+
+
+
+// ANIMATIONS via animate.css
+
+@keyframes slideInUp {
+  from {
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    transform-origin: center;
+    transform: rotate3d(0, 0, 1, -200deg);
+    opacity: 0;
+  }
+  to {
+    transform-origin: center;
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes jackInTheBox {
+  from {
+    opacity: 0;
+    transform: scale(0.1) rotate(30deg);
+    transform-origin: center bottom;
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  70% {
+    transform: rotate(3deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
