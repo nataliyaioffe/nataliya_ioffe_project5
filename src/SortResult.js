@@ -17,17 +17,16 @@ class SortResult extends Component {
     }
 
     render() {
-        
         return (
             <section id={this.props.userHouseName}>
-                <div class="wrapper"> 
+                <div className="wrapper"> 
                     {this.state.currentPage === "sortResult" ?
                     (
                     <div className="sort-result">
                         <p>
-                            <span class="name">{this.props.userName}...</span> 
+                            <span className="name">{this.props.userName}...</span> 
                             You've been sorted into 
-                            <span class="house">{this.props.userHouseName}</span>
+                            <span className="house">{this.props.userHouseName}</span>
                         </p>
                         <button onClick={this.handleClick}>View Dashboard</button>
                     </div>
@@ -38,7 +37,10 @@ class SortResult extends Component {
                             houseInformation={this.props.houseInformation}
                             userName={this.props.userName}
                             userHouseName={this.props.userHouseName}
-                            allUsers={this.props.allUsers} />
+                            allUsers={this.props.allUsers}                          
+                            spellName={this.props.spellName}
+                            spellType={this.props.spellType}
+                            spellEffect={this.props.spellEffect} />
                     )
                     }
                     </div>

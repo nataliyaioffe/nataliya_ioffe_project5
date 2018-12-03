@@ -26,6 +26,7 @@ class App extends Component {
       userName: "",
       userHouseName:"",
       fourHouses: [],
+      spellsArray: [],
       currentPage: "form", // OR DASHBOARD // SORT RESULT
       allUsers: {},
       loading: false,
@@ -51,6 +52,31 @@ class App extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.setState({ loading: true });
+
+    // SPELLS
+    axios({
+      method: 'GET',
+      url: `https://www.potterapi.com/v1/spells/`,
+      dataResponse: 'json',
+      params: {
+        key: `$2a$10$CaX1E1nDUX97buGbZ2MtC.00UEZBnHDu0KdWmAOZopX/AD2AtIBFK`
+      }
+    }).then(async(res) => {
+      const spellsArray = res.data;
+      this.shuffle(spellsArray);
+      const spellName = spellsArray[0].spell;
+      const spellType= spellsArray[0].type;
+      const spellEffect = spellsArray[0].effect;
+
+      await this.setState({
+        // spellsArray: spellsArray,
+        spellName: spellName,
+        spellType: spellType,
+        spellEffect: spellEffect
+      })
+    }) 
+
+    // HOUSES 
     axios({
       method: 'GET',
       url: `https://www.potterapi.com/v1/houses/`,
@@ -116,7 +142,10 @@ class App extends Component {
                 houseInformation={houseInformation}
                 userName={this.state.userName}
                 userHouseName={this.state.userHouseName}
-                allUsers={this.state.allUsers}/>
+                allUsers={this.state.allUsers}
+                spellName={this.state.spellName}
+                spellType={this.state.spellType}
+                spellEffect={this.state.spellEffect} />
             )
 
           // (<Dashboard 

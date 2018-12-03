@@ -231,7 +231,9 @@ input[type="submit"],
     color: black; }
 
 .sort-result {
-  padding-top: 20vh; }
+  padding-top: 20vh;
+  height: 100vh;
+  text-align: center; }
   .sort-result p {
     font-family: 'Cutive Mono', monospace;
     font-size: 3rem; }
@@ -244,10 +246,6 @@ input[type="submit"],
   .sort-result .name {
     font-size: 5rem;
     margin-bottom: 20px; }
-
-section {
-  display: flex;
-  text-align: center; }
 
 /* #Gryffindor .user-house-dash {
   background: radial-gradient(#740001, #330001);
@@ -279,7 +277,6 @@ section {
 #Slytherin {
   display: flex;
   flex-direction: column;
-  text-align: center;
   color: white;
   min-height: 100vh; }
 
@@ -317,39 +314,29 @@ Ravenclaw
 #946b2d 	(148,107,45)
 #000000 	(0,0,0) 
 */
-.user-house-dash {
-  height: 60vh;
-  position: relative;
-  z-index: 100;
-  border-bottom: 3px solid black; }
+.dashboard {
+  padding-top: 50px;
+  min-height: 60vh; }
 
-.master-house-lists {
-  display: flex;
-  flex-wrap: wrap;
-  height: 100%;
-  height: 40%; }
-
-.user-house-dash::before {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  bottom: -100px;
-  left: 43.5%; }
-
-#Gryffindor .user-house-dash::before {
-  content: url(../assets/Gryffindor-white.svg); }
-
-#Slytherin .user-house-dash::before {
-  content: url(../assets/Slytherin-white.svg); }
-
-#Hufflepuff .user-house-dash::before {
-  content: url(../assets/Hufflepuff-white.svg); }
-
-#Ravenclaw .user-house-dash::before {
-  content: url(../assets/Ravenclaw-white.svg); }
+.main-dash {
+  border: 5px solid white; }
+  .main-dash .user-info {
+    text-align: center;
+    margin-bottom: 50px; }
+  .main-dash .dash-details {
+    display: flex;
+    justify-content: space-between; }
+  .main-dash .spell-of-day {
+    text-align: right; }
+  .main-dash .detail-item {
+    display: flex; }
+  .main-dash .detail-head {
+    font-weight: bold;
+    margin-right: 10px; }
 
 .house-list {
-  width: 25%;
+  width: 100%;
+  height: 100%;
   padding: 20px;
   text-align: center; }
 
@@ -359,7 +346,8 @@ Ravenclaw
   text-transform: capitalize; }
 
 ul {
-  width: 100%;
+  width: 25%;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -369,8 +357,8 @@ ul {
 li {
   margin: 5px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  width: 50%;
-  padding: 5px 0; }
+  padding: 5px 0;
+  width: 100%; }
 
 img {
   color: white;

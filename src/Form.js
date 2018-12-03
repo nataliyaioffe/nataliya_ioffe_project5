@@ -17,6 +17,7 @@ class Form extends Component {
                             <div className="input-container">
                                 <label className="visuallyhidden" htmlFor="">Full Name</label>
                                 <input
+                                    required
                                     placeholder="Your Full Name Here"
                                     onChange={this.props.handleChange}
                                     id="userName"
