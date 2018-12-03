@@ -69,7 +69,6 @@ class App extends Component {
       const spellEffect = spellsArray[0].effect;
 
       await this.setState({
-        // spellsArray: spellsArray,
         spellName: spellName,
         spellType: spellType,
         spellEffect: spellEffect
@@ -125,7 +124,6 @@ class App extends Component {
   }
 
   render() {
-    //can also do this step in state. 
     const houseInformation = this.state.fourHouses.find((house) => house.name === this.state.userHouseName);
     return (
       <main>
@@ -147,13 +145,6 @@ class App extends Component {
                 spellType={this.state.spellType}
                 spellEffect={this.state.spellEffect} />
             )
-
-          // (<Dashboard 
-          //     houseInformation={foundHouse}
-          //     userName={this.state.userName}
-          //     userHouseName={this.state.userHouseName}
-          //     allUsers={this.state.allUsers}
-          //   />)
         }
       </main>
     )

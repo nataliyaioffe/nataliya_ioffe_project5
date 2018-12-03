@@ -176,12 +176,19 @@ h1 {
   font-size: 6.5rem; }
 
 h2 {
-  font-size: 3rem; }
+  font-size: 4rem;
+  margin-bottom: 25px; }
 
 h3 {
+  font-size: 3rem;
   margin-bottom: 10px; }
 
 /* FORM */
+img {
+  color: white;
+  height: 100px;
+  width: 100px; }
+
 #form-section {
   height: 100vh;
   background: black;
@@ -245,7 +252,8 @@ input[type="submit"],
   .sort-result .name {
     display: block; }
   .sort-result .house {
-    font-size: 7rem; }
+    font-size: 7rem;
+    margin-top: 10px; }
   .sort-result .name {
     font-size: 5rem;
     margin-bottom: 20px; }
@@ -269,7 +277,7 @@ input[type="submit"],
   background: radial-gradient(#0e1a40, #070c1f); }
 
 #Hufflepuff {
-  background: radial-gradient(#ecb939, #805c04); }
+  background: radial-gradient(#dba826, #5a4204); }
 
 #Slytherin {
   background: radial-gradient(#1a472a, #0a1d11);
@@ -289,45 +297,8 @@ input[type="submit"],
   width: 90%;
   max-width: 1280px; }
 
-/* 
-Gryffindor
-#740001 	(116,0,1)
-#ae0001 	(174,0,1)
-#eeba30 	(238,186,48)
-#d3a625 	(211,166,37)
-#000000 	(0,0,0) 
-
-Hufflepuff
-#ecb939 	(236,185,57)
-#f0c75e 	(240,199,94)
-#726255 	(114,98,85)
-#372e29 	(55,46,41)
-#000000 	(0,0,0)
-
-Slytherin
-#1a472a 	(26,71,42)
-#2a623d 	(42,98,61)
-#5d5d5d 	(93,93,93)
-#aaaaaa 	(170,170,170)
-#000000 	(0,0,0)
-
-Ravenclaw
-#0e1a40 	(14,26,64)
-#222f5b 	(34,47,91)
-#5d5d5d 	(93,93,93)
-#946b2d 	(148,107,45)
-#000000 	(0,0,0) 
-*/
-#Ravenclaw .dashboard,
-#Gryffindor .dashboard,
-#Slytherin .dashboard,
-#Hufflepuff .dashboard {
-  background-repeat: no-repeat;
-  background-position: 25%, -10%;
-  background-size: cover;
-  background-position: 50% 3%; }
-
 .main-dash {
+  position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -340,31 +311,58 @@ Ravenclaw
   .main-dash .user-name {
     font-size: 5rem;
     font-family: 'Playfair Display', serif;
-    font-style: italic; }
+    font-style: italic;
+    margin-bottom: 20px; }
   .main-dash .dash-details {
     display: flex;
     justify-content: space-between; }
-  .main-dash .spell-of-day {
-    text-align: center; }
-  .main-dash .detail-item {
-    display: flex; }
-  .main-dash .detail-head {
-    font-weight: bold;
-    margin-right: 10px; }
+  .main-dash .spells {
+    margin-top: 50px;
+    text-align: center;
+    padding-top: 75px;
+    height: 310px;
+    width: 310px;
+    border-radius: 50%; }
+    .main-dash .spells .spell {
+      font-weight: bold;
+      margin-bottom: 10px; }
+    .main-dash .spells .spell-effect {
+      text-transform: capitalize; }
+
+.house-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 50px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  width: 100%; }
+
+.details-container {
+  display: flex;
+  justify-content: center; }
+  .details-container .detail-item {
+    margin: 0 30px;
+    padding: 10px 20px; }
+  .details-container .detail-head {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    margin-bottom: 10px; }
+
+li::before,
+li::after {
+  content: "";
+  position: absolute; }
 
 .house-list {
   width: 100%;
   height: 100%;
-  padding: 20px;
+  padding: 50px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center; }
-
-.house-name {
-  text-align: center;
-  padding: 40px 0;
-  text-transform: capitalize; }
 
 ul {
   width: 100%;
@@ -380,46 +378,47 @@ li {
   width: 20%;
   position: relative; }
 
-li::before,
-li::after {
-  content: "";
-  position: absolute; }
-
 li::before {
-  width: 100px;
+  width: 50%;
   height: 1px;
   bottom: -10px;
-  left: 75px;
+  left: 25%;
   background: rgba(255, 255, 255, 0.1);
   z-index: 10; }
 
 li::after {
   bottom: -11px;
-  left: 125px;
+  left: 50%;
   width: 3px;
   height: 3px;
   border-radius: 50px;
   z-index: 20; }
 
-#Ravenclaw li::after {
+#Ravenclaw li::after,
+.detail-item::after {
   background: #946b2d; }
 
-#Gryffindor li::after {
+#Gryffindor li::after,
+.detail-item::after {
   background: #eeba30; }
 
 #Hufflepuff li::before {
   background: rgba(114, 98, 85, 0.4); }
 
-#Hufflepuff li::after {
+#Hufflepuff li::after,
+.detail-item::after {
   background: rgba(55, 46, 41, 0.8); }
 
 #Slytherin li::before {
-  background: rgba(0, 0, 0, 0.4); }
+  background: rgba(255, 255, 255, 0.1); }
 
-#Slytherin li::after {
+#Slytherin li::after,
+.detail-item::after {
   background: rgba(170, 170, 170, 0.5); }
 
-img {
-  color: white;
-  height: 100px;
-  width: 100px; }
+@media (max-width: 1115px) {
+  ul {
+    flex-wrap: no-wrap;
+    max-height: 100%; }
+  li {
+    width: 50%; } }

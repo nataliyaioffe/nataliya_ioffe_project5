@@ -1,4 +1,11 @@
 /* FORM */
+
+img {
+  color: white;
+  height: 100px;
+  width: 100px;
+}
+
 #form-section {
   height: 100vh;
   background: black;
@@ -44,17 +51,17 @@
 }
 
 input[type="submit"], 
-    .sort-result button {
-        margin-top: 20px;
-        padding: 10px;
-        width: 175px;
-        height: 50px;
-        background: transparent;
-        color: white;
-        transition: .15s ease-out;
-        border: 1px solid white;
-        &:hover {
-            background: white;
-            color: black;
-        }
+.sort-result button {
+    margin-top: 20px;
+    padding: 10px;
+    width: 175px;
+    height: 50px;
+    background: transparent;
+    color: white;
+    transition: .15s ease-out;
+    border: 1px solid white;
+    &:hover {
+        background: white;
+        color: black;
     }
+}
