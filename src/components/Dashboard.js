@@ -26,7 +26,6 @@ class Dashboard extends Component {
                         </div> 
                     </div>
                     <div className="house-details">
-                        {/* <img src={require("../assets/" + this.props.houseInformation.name + ".svg")} alt=""/> */}
                         <h2>About Your House</h2>
                         <div className="details-container">
                             <div className="detail-item">

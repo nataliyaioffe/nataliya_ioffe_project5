@@ -347,10 +347,10 @@ input[type="submit"],
   background: radial-gradient(rgba(14, 26, 64, 0.9), rgba(14, 26, 64, 0.9)), url(../assets/Ravenclaw.svg); }
 
 #Hufflepuff {
-  background: radial-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../assets/Hufflepuff.svg); }
+  background: radial-gradient(rgba(236, 185, 57, 0.9), rgba(236, 185, 57, 0.9)), url(../assets/Hufflepuff.svg); }
 
 #Slytherin {
-  background: radial-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../assets/Slytherin.svg); }
+  background: radial-gradient(rgba(26, 71, 42, 0.9), rgba(26, 71, 42, 0.9)), url(../assets/Slytherin.svg); }
 
 #Gryffindor,
 #Hufflepuff,
@@ -358,7 +358,8 @@ input[type="submit"],
 #Slytherin {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; }
+  min-height: 100vh;
+  background-repeat: no-repeat; }
 
 .wrapper {
   margin: 0 auto;
@@ -416,6 +417,10 @@ li::before,
 li::after {
   content: "";
   position: absolute; }
+
+@media (max-width: 940px) {
+  .details-container {
+    flex-direction: column; } }
 
 .house-list {
   width: 100%;
