@@ -28,12 +28,15 @@ img {
     padding-bottom: 2px;
     // margin: 10px 0;
     background: transparent;
-    border: transparent;
+    border: none;
     border-bottom: 1px solid white;
     color: white;
     text-align: center;
     &::placeholder {
       color: white;
+    }
+    &:focus {
+        color: none;
     }
   }
   .icons-container {

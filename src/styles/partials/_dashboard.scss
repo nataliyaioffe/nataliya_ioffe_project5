@@ -73,23 +73,23 @@ $white: ghostwhite;
   }
 }
 
-@media (max-width: 930px) {
-  #Hufflepuff {
-    background-position: 25%;
-  }
-}
+// @media (max-width: 930px) {
+//   #Hufflepuff {
+//     background-position: 25%;
+//   }
+// }
 
-@media (max-width: 725px) {
-  #Gryffindor {
-    background-position: 33%;
-  }
-  #Ravenclaw {
-    background-position: 25%;
-  }
-  #Slytherin {
-    background-position: 60%;
-  }
-}
+// @media (max-width: 725px) {
+//   #Gryffindor {
+//     background-position: 33%;
+//   }
+//   #Ravenclaw {
+//     background-position: 25%;
+//   }
+//   #Slytherin {
+//     background-position: 60%;
+//   }
+// }
 .house-details {
   background: rgba(0, 0, 0, 0.1);
   width: 100%;
@@ -125,6 +125,12 @@ $white: ghostwhite;
   background: rgba(0, 0, 0, 0.7);
   padding: 125px 0;
 }
+
+@media (max-width: 768px) {
+  .detail:nth-of-type(odd) {
+    background: black;
+  }
+}
 .detail:nth-of-type(even) {
   background: rgba(0, 0, 0, 0.2);
   padding: 150px 0;
@@ -147,6 +153,11 @@ $white: ghostwhite;
   top: -80px;
   border-width: 80px 0 0 100vw;
   border-color: transparent transparent transparent rgba(0, 0, 0, 0.73);
+}
+@media (max-width: 768px) {
+  .detail:nth-of-type(1)::before {
+    border-color: transparent transparent transparent black;
+  }
 }
 
 .detail:nth-of-type(2)::before {
@@ -185,6 +196,48 @@ $white: ghostwhite;
   }
 }
 
+@media (max-width: 768px) {
+  #Gryffindor {
+    background: $gryffindor1;
+    header {
+      background: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
+        url(../assets/lion2.jpg);
+    }
+  }
+  #Hufflepuff {
+    background: $hufflepuff1;
+    header {
+      background: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
+        url(../assets/badger1.jpg);
+    }
+  }
+  #Ravenclaw {
+    background: $ravenclaw1;
+    header {
+      background: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+        url(../assets/raven1.jpg);
+    }
+  }
+  #Slytherin {
+    background: $slytherin1;
+    header {
+      background: radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url(../assets/snake2.jpg);
+    }
+  }
+  #Gryffindor,
+  #Hufflepuff,
+  #Ravenclaw,
+  #Slytherin {
+    header {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+    }
+  }
+}
+
 @media (max-width: 450px) {
   .house-details {
     h2 {
@@ -195,38 +248,3 @@ $white: ghostwhite;
     }
   }
 }
-
-// .main-dash {
-//   position: relative;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   .house-header {
-//     text-align: center;
-//   }
-//   .user-info {
-//     text-align: center;
-//   }
-//   .user-name {
-//     margin-bottom: 20px;
-//   }
-//   .dash-details {
-//     display: flex;
-//     justify-content: space-between;
-//   }
-//   .spells {
-//     margin-top: 50px;
-//     text-align: center;
-//     padding-top: 75px;
-//     height: 310px;
-//     width: 310px;
-//     border-radius: 50%;
-//     .spell {
-//       margin-bottom: 10px;
-//     }
-//     .spell-effect {
-//       text-transform: capitalize;
-//     }
-//   }
-// }
