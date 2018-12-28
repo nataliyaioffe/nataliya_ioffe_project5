@@ -4,7 +4,10 @@
 }
 
 .sort-result {
-    padding-top: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
     height: 100vh;
     text-align: center;
     .result-house {
@@ -12,6 +15,7 @@
     }
     .result-house {
         margin-top: 10px;
+        line-height: 1;
     }
     .hide {
         visibility: hidden;
@@ -30,7 +34,6 @@
     }
 }
 
-
 @keyframes zoomIn {
   from {
     opacity: 0;
@@ -47,7 +50,6 @@
     color: white;
   }
 }
-
 
 // ANIMATIONS via animate.css
 

@@ -1,107 +1,232 @@
+$ravenclaw1: #222f5b;
+$ravenclaw2: #946b2d;
+$hufflepuff1: #ecb939;
+$hufflepuff2: #726255;
+$slytherin1: #2a623d;
+$slytherin2: #aaaaaa;
+$gryffindor1: #ae0001;
+$gryffindor2: #eeba30;
+$white: ghostwhite;
+
 #Gryffindor {
-  background: radial-gradient(rgba(116,0,1,0.9), rgba(116,0,1,0.9)),
-  url(../assets/Gryffindor.svg);
+  background: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
+    url(../assets/lion2.jpg);
+  .house-details {
+    h2::before {
+      background: $gryffindor1;
+    }
+  }
 }
 
 #Ravenclaw {
-   background: radial-gradient(rgba(14,26,64,0.9), rgba(14,26,64,0.9)),
-  url(../assets/Ravenclaw.svg);
+  background: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+    url(../assets/raven1.jpg);
+  .house-details {
+    h2::before {
+      background: $ravenclaw1;
+    }
+  }
 }
 
 #Hufflepuff {
-  background: radial-gradient(rgba(236,185,57,0.9), rgba(236,185,57,0.9)),
-  url(../assets/Hufflepuff.svg);
+  background: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
+    url(../assets/badger1.jpg);
+  .house-details {
+    h2::before {
+      background: $hufflepuff1;
+    }
+  }
 }
 
 #Slytherin {
-  background: radial-gradient(rgba(26,71,42,0.9), rgba(26,71,42,0.9)),
-  url(../assets/Slytherin.svg);
+  background: radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(../assets/snake2.jpg);
+  .house-details {
+    h2::before {
+      background: $slytherin1;
+    }
+  }
 }
 
 #Gryffindor,
 #Hufflepuff,
 #Ravenclaw,
 #Slytherin {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-}
-
-.wrapper {
-  margin: 0 auto;
-  width: 90%;
-  max-width: 1280px;
-}
-
-.main-dash {
-    position: relative;
-    min-height: 100vh;
+  background-attachment: fixed;
+  .wrapper {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1280px;
+  }
+  header {
+    height: 100vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    .house-header {
-        text-align: center;
+    padding: 0 4vw;
+    h1 {
+      color: rgba(255, 255, 255, 0.6);
     }
-    .user-info {
-        text-align: center;
-    }
-    .user-name {
-        margin-bottom: 20px;
-    }
-    .dash-details {
-        display: flex;
-        justify-content: space-between;
-    }
-    .spells {
-        margin-top: 50px;
-        text-align: center;
-        padding-top: 75px;
-        height: 310px;
-        width: 310px;
-        border-radius: 50%;
-        .spell {
-            margin-bottom: 10px;
-        }
-        .spell-effect {
-            text-transform: capitalize;
-        }
-    }
+  }
 }
 
+@media (max-width: 930px) {
+  #Hufflepuff {
+    background-position: 25%;
+  }
+}
+
+@media (max-width: 725px) {
+  #Gryffindor {
+    background-position: 33%;
+  }
+  #Ravenclaw {
+    background-position: 25%;
+  }
+  #Slytherin {
+    background-position: 60%;
+  }
+}
 .house-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;  
-    padding: 50px 0; 
-    border-top:1px solid rgba(255,255,255,0.5);
-    border-bottom:1px solid rgba(255,255,255,0.5);    
-    width: 100%;
-}
-
-.details-container {
-    display: flex;
-    justify-content: center;
-    .detail-item {
-        margin: 0 30px;
-        padding: 10px 20px;
-    }
-    .detail-head {
-        margin-bottom: 10px;
-
-    }
-}
-
-li::before, 
-li::after {
+  background: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  .wrapper {
+    padding: 0 20%;
+    // border: 1px solid blue;
+  }
+  h2 {
+    position: relative;
+    margin-bottom: 25px;
+  }
+  h2::before {
     content: "";
     position: absolute;
+    top: 45px;
+    width: 100px;
+    height: 8px;
+  }
+  p {
+    top: -30px;
+  }
+  h2,
+  p {
+    color: $white;
+  }
 }
 
-@media (max-width: 940px) {
-    .details-container {
-        flex-direction: column;
-    }
+.detail {
+  position: relative;
 }
+
+.detail:nth-of-type(odd) {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 125px 0;
+}
+.detail:nth-of-type(even) {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 150px 0;
+  h2,
+  p {
+    text-align: right;
+  }
+}
+
+.detail:nth-of-type(odd)::before,
+.detail:nth-of-type(even)::before,
+.detail:nth-of-type(3)::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  border-style: solid;
+}
+
+.detail:nth-of-type(1)::before {
+  top: -80px;
+  border-width: 80px 0 0 100vw;
+  border-color: transparent transparent transparent rgba(0, 0, 0, 0.73);
+}
+
+.detail:nth-of-type(2)::before {
+  top: 0;
+  border-width: 0 100vw 80px 100vw;
+  border-color: transparent transparent transparent rgba(0, 0, 0, 0.63);
+}
+
+.detail:nth-of-type(3)::before {
+  top: -80px;
+  border-width: 80px 0 0 100vw;
+  border-color: transparent transparent transparent rgba(0, 0, 0, 0.63);
+}
+
+.detail:nth-of-type(3)::after {
+  top: 100%;
+  border-width: 0 100vw 80px 100vw;
+  border-color: transparent transparent transparent rgba(0, 0, 0, 0.62);
+}
+
+@media (max-width: 870px) {
+  .house-details {
+    .wrapper {
+      padding: 0 0;
+    }
+  }
+}
+
+@media (max-width: 870px) {
+  .detail:nth-of-type(even),
+  .detail:nth-of-type(odd) {
+    h2,
+    p {
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .house-details {
+    h2 {
+      font-size: 2.5rem;
+    }
+    p {
+      font-size: 4rem;
+    }
+  }
+}
+
+// .main-dash {
+//   position: relative;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   .house-header {
+//     text-align: center;
+//   }
+//   .user-info {
+//     text-align: center;
+//   }
+//   .user-name {
+//     margin-bottom: 20px;
+//   }
+//   .dash-details {
+//     display: flex;
+//     justify-content: space-between;
+//   }
+//   .spells {
+//     margin-top: 50px;
+//     text-align: center;
+//     padding-top: 75px;
+//     height: 310px;
+//     width: 310px;
+//     border-radius: 50%;
+//     .spell {
+//       margin-bottom: 10px;
+//     }
+//     .spell-effect {
+//       text-transform: capitalize;
+//     }
+//   }
+// }

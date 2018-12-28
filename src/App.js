@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import './styles/App.css';
 import axios from 'axios';
-import firebase from './firebase';
+import firebase from "./components/firebase";
 import Form from "./components/Form";
 // import Dashboard from "./Dashboard";
 import SortResult from "./components/SortResult";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 const dbRef = firebase.database().ref();
 const dbRefGryffindor = firebase.database().ref("/gryffindor");
@@ -124,6 +127,10 @@ class App extends Component {
   }
 
   render() {
+    AOS.init({
+      duration: 1300,
+      delay: 200
+    })
     const houseInformation = this.state.fourHouses.find((house) => house.name === this.state.userHouseName);
     return (
       <main>
