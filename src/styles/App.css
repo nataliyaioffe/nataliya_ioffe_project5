@@ -275,17 +275,21 @@ img {
 input[type="submit"],
 .sort-result button {
   margin-top: 20px;
-  padding: 10px;
-  width: 200px;
   height: 50px;
   background: transparent;
   color: white;
   transition: 0.15s ease-out;
-  border: 1px solid white; }
+  border: 1px solid white;
+  padding: 0 30px; }
   input[type="submit"]:hover,
   .sort-result button:hover {
     background: white;
     color: black; }
+
+.sort-result button {
+  display: flex;
+  align-items: center;
+  padding: 0 30px; }
 
 #sort-page {
   background: black;
@@ -313,6 +317,10 @@ input[type="submit"],
     animation: jackInTheBox 1.25s; }
   .sort-result .anim4 {
     animation: slideInUp 1s; }
+
+.font-awesome-icon {
+  padding-left: 10px;
+  font-size: 3rem; }
 
 @keyframes zoomIn {
   from {
@@ -422,10 +430,6 @@ input[type="submit"],
   background: rgba(0, 0, 0, 0.7);
   padding: 125px 0; }
 
-@media (max-width: 768px) {
-  .detail:nth-of-type(odd) {
-    background: black; } }
-
 .detail:nth-of-type(even) {
   background: rgba(0, 0, 0, 0.2);
   padding: 150px 0; }
@@ -446,10 +450,6 @@ input[type="submit"],
   border-width: 80px 0 0 100vw;
   border-color: transparent transparent transparent rgba(0, 0, 0, 0.73); }
 
-@media (max-width: 768px) {
-  .detail:nth-of-type(1)::before {
-    border-color: transparent transparent transparent black; } }
-
 .detail:nth-of-type(2)::before {
   top: 0;
   border-width: 0 100vw 80px 100vw;
@@ -465,34 +465,23 @@ input[type="submit"],
   border-width: 0 100vw 80px 100vw;
   border-color: transparent transparent transparent rgba(0, 0, 0, 0.62); }
 
-@media (max-width: 870px) {
-  .house-details .wrapper {
-    padding: 0 0; } }
-
-@media (max-width: 870px) {
-  .detail:nth-of-type(even) h2,
-  .detail:nth-of-type(even) p,
-  .detail:nth-of-type(odd) h2,
-  .detail:nth-of-type(odd) p {
-    text-align: center; } }
-
 @media (max-width: 768px) {
-  #Gryffindor {
+  #Gryffindor .house-details, #Gryffindor .house-list {
     background: #ae0001; }
-    #Gryffindor header {
-      background: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url(../assets/lion2.jpg); }
-  #Hufflepuff {
+  #Gryffindor header {
+    background: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url(../assets/lion2.jpg); }
+  #Hufflepuff .house-details, #Hufflepuff .house-list {
     background: #ecb939; }
-    #Hufflepuff header {
-      background: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url(../assets/badger1.jpg); }
-  #Ravenclaw {
+  #Hufflepuff header {
+    background: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url(../assets/badger1.jpg); }
+  #Ravenclaw .house-details, #Ravenclaw .house-list {
     background: #222f5b; }
-    #Ravenclaw header {
-      background: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url(../assets/raven1.jpg); }
-  #Slytherin {
+  #Ravenclaw header {
+    background: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url(../assets/raven1.jpg); }
+  #Slytherin .house-details, #Slytherin .house-list {
     background: #2a623d; }
-    #Slytherin header {
-      background: radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/snake2.jpg); }
+  #Slytherin header {
+    background: radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/snake2.jpg); }
   #Gryffindor header,
   #Hufflepuff header,
   #Ravenclaw header,
@@ -501,6 +490,21 @@ input[type="submit"],
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll; } }
+
+@media (max-width: 768px) and (max-width: 768px) {
+  .detail:nth-of-type(odd) {
+    background: black; } }
+
+@media (max-width: 768px) {
+  .detail:nth-of-type(3)::after {
+    border-color: transparent transparent transparent black; }
+  .detail:nth-of-type(1)::before {
+    border-color: transparent transparent transparent black; }
+  .detail:nth-of-type(even) h2,
+  .detail:nth-of-type(even) p,
+  .detail:nth-of-type(odd) h2,
+  .detail:nth-of-type(odd) p {
+    text-align: center; } }
 
 @media (max-width: 450px) {
   .house-details h2 {

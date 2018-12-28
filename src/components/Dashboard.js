@@ -33,7 +33,7 @@ class Dashboard extends Component {
         <div className="house-details">
           <div className="detail">
             <div className="wrapper">
-              <h2 data-aos="fade-up-right">Original Founder</h2>
+              <h2 data-aos="fade-up-right">House Founder</h2>
               <p data-aos="fade-up-left">
                 {this.props.houseInformation.founder}
               </p>

@@ -8,7 +8,6 @@ import SortResult from "./components/SortResult";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-
 const dbRef = firebase.database().ref();
 const dbRefGryffindor = firebase.database().ref("/gryffindor");
 const dbRefSlytherin = firebase.database().ref("/slytherin");
