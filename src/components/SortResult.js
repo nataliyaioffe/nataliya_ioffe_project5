@@ -71,7 +71,7 @@ class SortResult extends Component {
             <button className={this.state.anim4 === true ? "anim4" : "hide"} onClick={this.handleClick}>
               {" "}
               More About {this.props.userHouseName}
-              <FontAwesomeIcon className="font-awesome-icon" icon={faArrowRight} />
+              <FontAwesomeIcon className="arrow-right" icon={faArrowRight} />
             </button>
           </div> : <Dashboard houseInformation={this.props.houseInformation} userName={this.props.userName} userHouseName={this.props.userHouseName} allUsers={this.props.allUsers} spellName={this.props.spellName} spellType={this.props.spellType} spellEffect={this.props.spellEffect} />}
       </section>;

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import List from "./List";
 import { type } from "os";
 import date from "./date";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 class Dashboard extends Component {
   constructor(props) {
@@ -15,19 +17,10 @@ class Dashboard extends Component {
     return <section id={this.props.userHouseName}>
         <header>
           <div className="wrapper">
-            <h1 data-aos="zoom-out" data-aos-duration="5000">
+            <h1 data-aos="fade-down" data-aos-duration="5000">
               {this.props.userHouseName}
             </h1>
-            {/* <div className="user-info">
-                  <p className="user-name">Welcome, {this.props.userName}</p>
-                  <p>Today's date is {date}</p>
-              </div> */}
-            {/* <div className="spells">
-                <h2>Featured Spell</h2>
-                <p className="spell">{this.props.spellName}</p>
-                <p className="spell-effect">{this.props.spellEffect}</p>
-            </div>  */}
-            {/* </div> */}
+          <FontAwesomeIcon className="arrow-down" data-aos="fade-up" data-aos-duration="5000" data-aos-delay="8000" icon={faArrowDown} />
           </div>
         </header>
         <div className="house-details">
@@ -62,3 +55,16 @@ class Dashboard extends Component {
 }
 
 export default Dashboard;
+
+
+
+{/* <div className="user-info">
+                  <p className="user-name">Welcome, {this.props.userName}</p>
+                  <p>Today's date is {date}</p>
+              </div> */}
+{/* <div className="spells">
+                <h2>Featured Spell</h2>
+                <p className="spell">{this.props.spellName}</p>
+                <p className="spell-effect">{this.props.spellEffect}</p>
+            </div>  */}
+{/* </div> */ }

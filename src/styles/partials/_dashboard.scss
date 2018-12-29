@@ -1,15 +1,32 @@
-$ravenclaw1: #222f5b;
+// $ravenclaw1: #222f5b;
+$ravenclaw1: #0e1a40;
 $ravenclaw2: #946b2d;
 $hufflepuff1: #ecb939;
 $hufflepuff2: #726255;
 $slytherin1: #2a623d;
 $slytherin2: #aaaaaa;
-$gryffindor1: #ae0001;
+$gryffindor1: #530001;
 $gryffindor2: #eeba30;
 $white: ghostwhite;
 
+.arrow-down {
+  font-size: 3rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(5px);
+  }
+}
 #Gryffindor {
-  background: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url(../assets/lion2.jpg);
   .house-details {
     h2::before {
@@ -19,7 +36,7 @@ $white: ghostwhite;
 }
 
 #Ravenclaw {
-  background: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url(../assets/raven1.jpg);
   .house-details {
     h2::before {
@@ -29,7 +46,7 @@ $white: ghostwhite;
 }
 
 #Hufflepuff {
-  background: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url(../assets/badger1.jpg);
   .house-details {
     h2::before {
@@ -39,8 +56,7 @@ $white: ghostwhite;
 }
 
 #Slytherin {
-  background: radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(../assets/snake2.jpg);
+  background: url(../assets/snake2.jpg);
   .house-details {
     h2::before {
       background: $slytherin1;
@@ -57,18 +73,16 @@ $white: ghostwhite;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  .wrapper {
-    margin: 0 auto;
-    width: 90%;
-    max-width: 1280px;
-  }
   header {
     height: 100vh;
     display: flex;
     align-items: center;
     padding: 0 4vw;
+    .wrapper {
+      text-align: center;
+    }
     h1 {
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba(255, 255, 255, 0.8);
     }
   }
 }
@@ -82,13 +96,10 @@ $white: ghostwhite;
   h2 {
     position: relative;
     margin-bottom: 25px;
-  }
-  h2::before {
-    content: "";
-    position: absolute;
-    top: 45px;
-    width: 100px;
-    height: 8px;
+    border-bottom: 2px solid $hufflepuff1;
+    display: inline-block;
+    padding: 0 20px 0 0;
+    line-height: 1.2;
   }
   p {
     top: -30px;
@@ -111,9 +122,11 @@ $white: ghostwhite;
 .detail:nth-of-type(even) {
   background: rgba(0, 0, 0, 0.2);
   padding: 150px 0;
-  h2,
-  p {
+  .wrapper {
     text-align: right;
+  }
+  h2 {
+    padding: 0 0 0 20px;
   }
 }
 
@@ -153,41 +166,50 @@ $white: ghostwhite;
 /////
 /// MEDIA QUERIES
 ////
+
 @media (max-width: 768px) {
   #Gryffindor {
-    .house-details, .house-list {
+    .house-details,
+    .house-list {
       background: $gryffindor1;
     }
     header {
-      background: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
+      background: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.4),
+          rgba(0, 0, 0, 0.4)
+        ),
         url(../assets/lion2.jpg);
     }
   }
   #Hufflepuff {
-    .house-details, .house-list {
+    .house-details,
+    .house-list {
       background: $hufflepuff1;
     }
     header {
-      background: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
+      background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
         url(../assets/badger1.jpg);
     }
   }
   #Ravenclaw {
-    .house-details, .house-list {
+    .house-details,
+    .house-list {
       background: $ravenclaw1;
     }
     header {
-      background: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+      background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
         url(../assets/raven1.jpg);
     }
   }
+
   #Slytherin {
-    .house-details, .house-list {
+    .house-details,
+    .house-list {
       background: $slytherin1;
     }
     header {
-      background: radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url(../assets/snake2.jpg);
+      background: url(../assets/snake2.jpg);
     }
   }
   #Gryffindor,
@@ -201,10 +223,12 @@ $white: ghostwhite;
       background-attachment: scroll;
     }
   }
-  @media (max-width: 768px) {
-    .detail:nth-of-type(odd) {
-      background: black;
-    }
+  .detail:nth-of-type(even) {
+    padding: 125px 0;
+  }
+  .detail:nth-of-type(odd) {
+    background: black;
+    padding: 75px 0;
   }
   .detail:nth-of-type(3)::after {
     border-color: transparent transparent transparent black;
@@ -214,9 +238,11 @@ $white: ghostwhite;
   }
   .detail:nth-of-type(even),
   .detail:nth-of-type(odd) {
-    h2,
-    p {
+    .wrapper {
       text-align: center;
+    }
+    h2 {
+      padding: 0 0 0 0;
     }
   }
 }
