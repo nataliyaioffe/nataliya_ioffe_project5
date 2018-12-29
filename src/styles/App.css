@@ -356,7 +356,8 @@ input[type="submit"],
 
 .arrow-down {
   font-size: 3rem;
-  animation: bounce 2s infinite; }
+  animation: bounce 2s infinite;
+  animation-delay: 1s; }
 
 @keyframes bounce {
   0% {
@@ -384,7 +385,7 @@ input[type="submit"],
 #Slytherin {
   background: url(../assets/snake2.jpg); }
   #Slytherin .house-details h2::before {
-    background: #2a623d; }
+    background: #1a472a; }
 
 #Gryffindor,
 #Hufflepuff,
@@ -493,7 +494,7 @@ input[type="submit"],
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../assets/raven1.jpg); }
   #Slytherin .house-details,
   #Slytherin .house-list {
-    background: #2a623d; }
+    background: #1a472a; }
   #Slytherin header {
     background: url(../assets/snake2.jpg); }
   #Gryffindor header,

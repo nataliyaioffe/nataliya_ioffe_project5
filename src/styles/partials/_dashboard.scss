@@ -1,9 +1,8 @@
-// $ravenclaw1: #222f5b;
 $ravenclaw1: #0e1a40;
 $ravenclaw2: #946b2d;
 $hufflepuff1: #ecb939;
 $hufflepuff2: #726255;
-$slytherin1: #2a623d;
+$slytherin1: #1a472a;
 $slytherin2: #aaaaaa;
 $gryffindor1: #530001;
 $gryffindor2: #eeba30;
@@ -12,6 +11,7 @@ $white: ghostwhite;
 .arrow-down {
   font-size: 3rem;
   animation: bounce 2s infinite;
+  animation-delay: 1s;
 }
 
 @keyframes bounce {
