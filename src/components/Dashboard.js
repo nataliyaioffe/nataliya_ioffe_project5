@@ -4,6 +4,21 @@ import { type } from "os";
 import date from "./date";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import firebase from "./firebase";
+import { Redirect } from 'react-router-dom';
+
+const dbRef = firebase.database().ref();
+const dbRefGryffindor = firebase.database().ref("/gryffindor");
+const dbRefSlytherin = firebase.database().ref("/slytherin");
+const dbRefHufflepuff = firebase.database().ref("/hufflepuff");
+const dbRefRavenclaw = firebase.database().ref("/ravenclaw");
+
+const defaultState = {
+  gryffindor: {},
+  slytherin: {},
+  hufflepuff: {},
+  ravenclaw: {}
+};
 
 class Dashboard extends Component {
   constructor(props) {
@@ -11,8 +26,13 @@ class Dashboard extends Component {
   }
 
   render() {
-    console.log(this.props.allUsers);
-    const lowerCaseHouseName = this.props.houseInformation.name.toLowerCase();
+    // if there is no data, redirect home
+    if (!this.props.userHouseName) {
+      return <Redirect to ='/' />;
+    }
+
+    const houseInformation = this.props.fourHouses.find(house => house.name === this.props.userHouseName);
+    const lowerCaseHouseName = houseInformation.name.toLowerCase();
 
     return <section id={this.props.userHouseName}>
         <header>
@@ -28,7 +48,7 @@ class Dashboard extends Component {
             <div className="wrapper">
               <h2 data-aos="fade-up-right">House Founder</h2>
               <p data-aos="fade-up-left">
-                {this.props.houseInformation.founder}
+                {this.props.userHouseFounder}
               </p>
             </div>
           </div>
@@ -36,7 +56,7 @@ class Dashboard extends Component {
             <div className="wrapper">
               <h2 data-aos="fade-up-left">Head of House</h2>
               <p data-aos="fade-up-right">
-                {this.props.houseInformation.headOfHouse}
+                {this.props.userHeadOfHouse}
               </p>
             </div>
           </div>
@@ -44,12 +64,12 @@ class Dashboard extends Component {
             <div className="wrapper">
               <h2 data-aos="fade-up-right">House Ghost</h2>
               <p data-aos="fade-up-left">
-                {this.props.houseInformation.houseGhost}
+                {this.props.userHouseGhost}
               </p>
             </div>
           </div>
         </div>
-        <List houseName={this.props.houseInformation.name} users={this.props.allUsers[lowerCaseHouseName]} />
+        <List houseName={this.props.userHouseNanme} users={this.props.allUsers[lowerCaseHouseName]} />
       </section>;
   }
 }
@@ -58,13 +78,13 @@ export default Dashboard;
 
 
 
-{/* <div className="user-info">
+ {/* <div className="user-info">
                   <p className="user-name">Welcome, {this.props.userName}</p>
                   <p>Today's date is {date}</p>
               </div> */}
-{/* <div className="spells">
+            {/* <div className="spells">
                 <h2>Featured Spell</h2>
                 <p className="spell">{this.props.spellName}</p>
                 <p className="spell-effect">{this.props.spellEffect}</p>
             </div>  */}
-{/* </div> */ }
+            {/* </div> */}
